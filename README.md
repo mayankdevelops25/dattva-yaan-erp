@@ -1,6 +1,5 @@
 <div align="center">
     <a href="https://dattvayaan.live/">
-  <img src="https://avatars.githubusercontent.com/u/50052356?s=200&v=4" width="128px" />
     </a>
     <h1>Open Source ERP / CRM Accounting Invoice Quote</h1>
     <p align="center">
@@ -40,7 +39,7 @@ Based on Mern Stack (Node.js / Express.js / MongoDb / React.js ) 👨‍💻
 ## Our Sponsors
 
   <a href="https://m.do.co/c/4ead8370b905?ref=idurarapp.com">
-    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" width="201px">
+    
   </a>
 
 #
