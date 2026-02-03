@@ -1,0 +1,10 @@
+node_modules/
+.env
+backend/.env
+frontend/node_modules/
+backend/src/public/uploads/
+*.log
+.DS_Store
+.vscode/
+.idea/
+*.iml
