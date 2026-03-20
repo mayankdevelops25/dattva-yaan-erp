@@ -77,11 +77,14 @@ Dattva Yaan is Open "Fair-Code" Source ERP / CRM (Invoice / Inventory / Accounti
 
 **📚 DNS & Deployment Configuration:**
 
-- **Quick Start:** [DNS Quick Start Guide](DNS-QUICK-START.md) - Fast setup for nameservers and DNS records
-- **Complete Guide:** [Deployment & DNS Configuration](DEPLOYMENT-DNS-CONFIGURATION.md) - Comprehensive guide with SSL, web servers, and troubleshooting
+- **Domain Registrar Guides:**
+  - [Name.com Setup Guide](NAME-COM-SETUP-GUIDE.md) - Step-by-step guide for Name.com domain configuration
+- **General Guides:**
+  - [DNS Quick Start Guide](DNS-QUICK-START.md) - Fast setup for nameservers and DNS records
+  - [Deployment & DNS Configuration](DEPLOYMENT-DNS-CONFIGURATION.md) - Comprehensive guide with SSL, web servers, and troubleshooting
 
 **Topics covered:**
-- Nameserver configuration (Cloudflare, DigitalOcean, AWS Route53)
+- Nameserver configuration (Cloudflare, DigitalOcean, AWS Route53, Name.com)
 - DNS records setup (A, AAAA, CNAME)
 - SSL/TLS certificate installation (Let's Encrypt)
 - Web server configuration (Nginx, Apache)
