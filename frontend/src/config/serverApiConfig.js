@@ -1,11 +1,35 @@
-const ensureTrailingSlash = (url = '') =>
-  url.endsWith('/') ? url : `${url}/`;
+const DEFAULT_PROD_URL = 'https://dattvayaan.live/';
+
+/**
+ * Normalize a base URL by trimming whitespace, applying a fallback when empty,
+ * and ensuring it ends with a trailing slash.
+ * @param {string | undefined} url - candidate URL to normalize
+ * @param {string} fallback - URL to use when the candidate is missing/empty
+ * @returns {string} normalized URL that always ends with `/`
+ */
+const normalizeUrlWithTrailingSlash = (url, fallback = DEFAULT_PROD_URL) => {
+  const trimmedInput = typeof url === 'string' ? url.trim() : '';
+  const candidate = trimmedInput.length > 0 ? trimmedInput : fallback;
+  const applySlash = (value) => (value.endsWith('/') ? value : `${value}/`);
+
+  try {
+    const normalized = new URL(candidate).toString();
+    return applySlash(normalized);
+  } catch (error) {
+    console.warn(
+      'Invalid base URL provided, falling back to default.',
+      error?.message || error
+    );
+    return applySlash(fallback);
+  }
+};
 
 const isProdLike =
-  import.meta.env.PROD || import.meta.env.VITE_DEV_REMOTE == 'remote';
+  import.meta.env.PROD || import.meta.env.VITE_DEV_REMOTE === 'remote';
 
-const backendBaseUrl = ensureTrailingSlash(
-  import.meta.env.VITE_BACKEND_SERVER || 'https://dattvayaan.live/'
+const backendBaseUrl = normalizeUrlWithTrailingSlash(
+  import.meta.env.VITE_BACKEND_SERVER,
+  DEFAULT_PROD_URL
 );
 
 export const API_BASE_URL = isProdLike
@@ -16,10 +40,9 @@ export const BASE_URL = isProdLike
   ? backendBaseUrl
   : 'http://localhost:8888/';
 
-const websiteBaseUrl = ensureTrailingSlash(
-  import.meta.env.VITE_WEBSITE_URL ||
-    import.meta.env.VITE_WEBSITE ||
-    'https://dattvayaan.live/'
+const websiteBaseUrl = normalizeUrlWithTrailingSlash(
+  import.meta.env.VITE_WEBSITE_URL || import.meta.env.VITE_WEBSITE,
+  DEFAULT_PROD_URL
 );
 
 export const WEBSITE_URL = import.meta.env.PROD
