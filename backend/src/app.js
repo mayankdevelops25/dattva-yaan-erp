@@ -18,9 +18,28 @@ const fileUpload = require('express-fileupload');
 // create our Express app
 const app = express();
 
+const ALLOWED_ORIGINS = [
+  'https://dattvayaan.live',
+  'https://www.dattvayaan.live',
+  // Allow any explicitly configured base URL as well
+  process.env.APP_BASE_URL,
+  process.env.BASE_URL,
+  process.env.WEBSITE_URL,
+].filter((o) => o && o.trim()).map((o) => o.replace(/\/$/, ''));
+
 app.use(
   cors({
-    origin: true,
+    origin:
+      process.env.NODE_ENV === 'production'
+        ? (origin, callback) => {
+            // Allow server-to-server requests (no Origin header) and known origins
+            if (!origin || ALLOWED_ORIGINS.includes(origin)) {
+              callback(null, true);
+            } else {
+              callback(new Error(`CORS: origin '${origin}' not allowed`));
+            }
+          }
+        : true,
     credentials: true,
   })
 );
