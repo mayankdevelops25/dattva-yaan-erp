@@ -53,6 +53,8 @@ Dattva Yaan is Open "Fair-Code" Source ERP / CRM (Invoice / Inventory / Accounti
 
 ## Getting started
 
+### Local Development Setup
+
 1.[Clone the repository](INSTALLATION-INSTRUCTIONS.md#step-1-clone-the-repository)
 
 2.[Create Your MongoDB Account and Database Cluster](INSTALLATION-INSTRUCTIONS.md#Step-2-Create-Your-MongoDB-Account-and-Database-Cluster)
@@ -70,6 +72,23 @@ Dattva Yaan is Open "Fair-Code" Source ERP / CRM (Invoice / Inventory / Accounti
 8.[Install Frontend Dependencies](INSTALLATION-INSTRUCTIONS.md#Step-8-Install-Frontend-Dependencies)
 
 9.[Run the Frontend Server](INSTALLATION-INSTRUCTIONS.md#Step-9-Run-the-Frontend-Server)
+
+### Production Deployment
+
+**📚 DNS & Deployment Configuration:**
+
+- **Quick Start:** [DNS Quick Start Guide](DNS-QUICK-START.md) - Fast setup for nameservers and DNS records
+- **Complete Guide:** [Deployment & DNS Configuration](DEPLOYMENT-DNS-CONFIGURATION.md) - Comprehensive guide with SSL, web servers, and troubleshooting
+
+**Topics covered:**
+- Nameserver configuration (Cloudflare, DigitalOcean, AWS Route53)
+- DNS records setup (A, AAAA, CNAME)
+- SSL/TLS certificate installation (Let's Encrypt)
+- Web server configuration (Nginx, Apache)
+- URL forwarding and redirects
+- Production environment variables
+- Security best practices
+- Troubleshooting common issues
 
 ## Contributing
 
